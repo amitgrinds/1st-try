@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus — Creative Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Sora", sans-serif;
+            background: #0b0b0f;
+            color: #ffffff;
+        }
+
+        .container {
+            width: min(1200px, 90%);
+            margin: auto;
+        }
+
+        /* NAVBAR */
+        nav {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #9b7db7;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #a1a1aa;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-btn {
+            background: #a855f7;
+            color: rgb(215, 28, 28);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .hero-content {
+            width: 55%;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 14px;
+            border: 1px solid #2a2a35;
+            border-radius: 100px;
+            color: #c084fc;
+            font-size: 12px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 6vw, 82px);
+            line-height: 1.05;
+            letter-spacing: -4px;
+            margin-bottom: 24px;
+        }
+
+        h1 span {
+            color: #a855f7;
+        }
+
+        .hero-content p {
+            color: #a1a1aa;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 540px;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 14px 22px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #a855f7;
+            color: white;
+            border: 1px solid #a855f7;
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid #34343e;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.25);
+        }
+
+        .secondary-btn:hover {
+            background: #18181f;
+        }
+
+        /* VISUAL */
+        .hero-visual {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visual-box {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .circle-1 {
+            width: 320px;
+            height: 320px;
+            background: linear-gradient(135deg, #a855f7, #6366f1);
+            filter: blur(2px);
+            opacity: 0.9;
+        }
+
+        .circle-2 {
+            width: 230px;
+            height: 230px;
+            background: #0b0b0f;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .floating-card {
+            position: absolute;
+            padding: 16px 20px;
+            background: rgba(25, 25, 32, 0.85);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            font-size: 13px;
+        }
+
+        .card-top {
+            top: 35px;
+            right: 0;
+        }
+
+        .card-bottom {
+            bottom: 45px;
+            left: 0;
+        }
+
+        .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #c084fc;
+            display: block;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                padding: 70px 0;
+            }
+
+            .hero-content,
+            .hero-visual {
+                width: 100%;
+            }
+
+            .hero-content p {
+                margin-inline: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .visual-box {
+                transform: scale(0.8);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav>
+            <div class="logo">NEXUS<span>.</span></div>
+
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <button class="nav-btn">Let's Talk →</button>
+        </nav>
+
+
+        <main class="hero">
+
+            <div class="hero-content">
+                <div class="badge">✦ DIGITAL CREATIVE STUDIO</div>
+
+                <h1>
+                    We create digital
+                    experiences that
+                    <span>matter.</span>
+                </h1>
+
+                <p>
+                    A creative studio focused on building bold brands,
+                    beautiful websites, and unforgettable digital
+                    experiences for ambitious companies.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="primary-btn">View Our Work ↗</button>
+                    <button class="secondary-btn">Get in Touch</button>
+                </div>
+            </div>
+
+
+            <div class="hero-visual">
+                <div class="visual-box">
+
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+
+                    <div class="floating-card card-top">
+                        <span class="number">120+</span>
+                        Projects Delivered
+                    </div>
+
+                    <div class="floating-card card-bottom">
+                        <span class="number">08</span>
+                        Years Creating
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
